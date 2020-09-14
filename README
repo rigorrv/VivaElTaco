@@ -1,0 +1,9 @@
+I implemented backend (PHP) and I created the App 
+this app works with Retrofit Rx Java, Google Map API and Dagger. The responsibilities of the retrofit is getting the rest that I created in my personal Data Base.
+I implemented Dagger, 3 Fragments and Interface to communicate the fragments and Google Map API 
+
+this is the Api for store locations:
+https://nonstopcode.com/rigo/vivaeltaco/addresPretyJson.php
+
+this is the Api for the Menu
+https://nonstopcode.com/rigo/vivaeltaco/foodPretyJson.php
