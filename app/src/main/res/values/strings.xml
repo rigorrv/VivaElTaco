@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">VivaElTaco</string>
+    <string name="logo_viva_el_taco">logo Viva el Taco</string>
+    <string name="yellow_bar_for_menu">Yellow Bar for Menu</string>
+    <string name="menu">Menu</string>
+    <string name="locations">Locations</string>
+    <string name="menu_button">Menu Button</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

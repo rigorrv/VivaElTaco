@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline">
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="12dp"
+            android:background="#2C133D"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/googleMapBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/view3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3">
+
+            <fragment
+                android:id="@+id/google"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </fragment>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imageBox"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view3">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:indeterminateTint="#E2294E"
+                app:layout_constraintBottom_toBottomOf="@+id/imageFood"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageFood" />
+
+            <ImageView
+                android:id="@+id/imageFood"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/nameFoodBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/food" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nameFoodBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/infoFoodBox"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/gradientImg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_gradientbar" />
+
+                <ImageView
+                    android:id="@+id/orderBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/gradientImg"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_ordericon" />
+
+                <ImageView
+                    android:id="@+id/likeBtn"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/orderBtn"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_heart" />
+
+                <TextView
+                    android:id="@+id/foodNamePicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Taco"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lineNamePicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="-"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/gradientImg"
+                    app:layout_constraintStart_toEndOf="@+id/foodNamePicture"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/priceFoodPicture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="$13"
+                    android:textColor="#FFA91F"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/gradientImg"
+                    app:layout_constraintStart_toEndOf="@+id/lineNamePicture"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infoFoodBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="#E2294E"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/infoFoodText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="The golden taco is a dish from Mexico and Central America very popular in other countries around the world, consisting of a small tortilla, rolled with some type of filling, usually"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageView
+            android:id="@+id/barImageTop"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_mapbartop" />
+
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_marginBottom="8dp"
+            android:background="#FFA91F"
+            app:layout_constraintBottom_toTopOf="@+id/menuTypeBtnBox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/menuTypeBtnBox"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/searchBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="#EC4161"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <EditText
+                    android:id="@+id/searchText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="1dp"
+                    android:hint="Search City"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/searchBtn"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/btnMenuTypeFood"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/arrowText"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/menuTypeBtn"
+                    app:srcCompat="@drawable/ic_yellowarrowlocations" />
+
+                <TextView
+                    android:id="@+id/menuTypeBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu"
+                    android:textColor="#FFA91F"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".65" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menuFoodTypeBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+        <ImageView
+            android:id="@+id/menuFoodBG"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_menufood" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="2dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/menuFoodBG"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/arrowScrollDown"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/menuFoodBG"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_yellowarrowlocations"
+            app:tint="#FFFFFF" />
+
+        <ScrollView
+            style="@android:style/Widget.DeviceDefault.Light.ScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
+
+                <RadioGroup
+                    android:id="@+id/radioButtonBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioButton0"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:checked="true"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Favorites"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        style="@style/Widget.AppCompat.CompoundButton.RadioButton"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Entry"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Breakfast"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Lunch"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Dessert"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Juice"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Alcohol"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scaleX="1"
+                        android:scaleY="1"
+                        android:text="Coffe"
+                        android:textColor="#4B1459"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </RadioGroup>
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
