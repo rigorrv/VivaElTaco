@@ -39,6 +39,12 @@ class CentralFragment : Fragment(), OnMapReadyCallback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
 
+        compassBtn.setOnClickListener {
+            val usa = LatLng(38.749831, -102.096594)
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(usa, 3f))
+
+        }
+
         btnMenuTypeFood.setOnClickListener {
             toggle = !toggle
             if (toggle)

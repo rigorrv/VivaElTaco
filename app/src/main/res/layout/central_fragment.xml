@@ -37,8 +37,8 @@
             android:id="@+id/googleMapBox"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
-            android:visibility="gone"
+            android:layout_marginTop="16dp"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="@+id/view3"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -55,6 +55,16 @@
                 app:layout_constraintTop_toTopOf="parent">
 
             </fragment>
+
+            <ImageView
+                android:id="@+id/compassBtn"
+                android:layout_width="41.75dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/google"
+                app:srcCompat="@drawable/ic_compass" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
